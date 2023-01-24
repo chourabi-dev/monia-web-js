@@ -88,12 +88,16 @@ http.createServer(function(req,res){
 const express = require('express')
 const app = express()
 const port = 8080
+const bodyp = require("body-parser");
+app.use(bodyp.json())
+
 
 app.get('/', (req, res) => {
     res.send('Hello World!')
 })
   
 app.post('/add-employee', (req, res) => {
+    console.log(req.body);
     res.send('employee added !!..')
 })
   
